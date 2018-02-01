@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain">
+
+  <class name="Account" table="account">
+    <id name="IdA" column="id_account" type="int">
+      <generator class="native"></generator>
+    </id>
+    <property name="Name" column="name_account" not-null="true"/>
+    <property name="URL" column="url_account" not-null="true"/>
+    <property name="LoginA" column="login_account" not-null="true"/>
+    <property name="PasswordA" column="password_account" not-null="true"/>
+    <property type="DateTime" name="Update" column="update_account" not-null="true"/>
+    <property name="Strength" column="strength_account" not-null="true"/>
+    <many-to-one name="MyUser" class="User" column="id_user"/>
+  </class>
+
+</hibernate-mapping>
